@@ -17,7 +17,8 @@ comparison and routing index is maintained at
 
 ## Install
 
-**npm** — downloads the prebuilt binary for your platform on install:
+**npm** installs a lifecycle-script-free wrapper. The first command downloads
+the prebuilt binary for your platform and caches it for later runs:
 
 ```bash
 npm install -g @ivorpad/mercadona      # puts `mercadona` on your PATH
