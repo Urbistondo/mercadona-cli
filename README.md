@@ -384,13 +384,18 @@ State lives in `~/.mercadona/` (override with `MERCADONA_CONFIG_DIR`):
 - `token.json` — cached session: access + refresh token + cookie (machine-managed).
 - `algolia.json` — cached/auto-refreshed search credentials.
 
-## Claude skill
+## Agent skill
 
-This repo bundles a Claude Code skill, **`mercadona-shop`** (`.claude/skills/mercadona-shop/`),
-that drives this CLI to do the grocery shop: turn a list into priced products, fill the cart,
-prepare delivery checkout, and place the order only on explicit user consent. Install it where
-your Claude reads skills (symlink or copy `.claude/skills/mercadona-shop` into `~/.claude/skills/`);
-it points back at this binary, so build the CLI first.
+This repo bundles the tracked **`mercadona-shop`** skill at
+`.claude/skills/mercadona-shop/`. It turns a list into priced products, fills
+the cart, prepares delivery checkout, and places an order only after explicit
+consent for the specific reviewed order.
+
+Claude can symlink that directory into `~/.claude/skills/`. Codex uses the
+repo-local `.agents/skills/mercadona-shop` compatibility symlink or a workspace
+skill symlink pointing to the same tracked directory. Keep one canonical copy
+so the two agent runtimes cannot drift. The skill expects `mercadona` on
+`PATH`; install the npm package or build the CLI first.
 
 ## Status
 
