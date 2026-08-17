@@ -7,6 +7,14 @@ deps, structured `--json` output for programmatic/agent use.
 > Unofficial. Mercadona has no public API. Bring your own credentials; use at a
 > sane request rate. This talks to the same HTTP endpoints the website does.
 
+## UrbOS relationship
+
+Within UrbOS, this independent repository lives at `tools/mercadona-cli/`
+beside `tools/alcampo-cli/`. The Alcampo tool uses a stricter, digest-bound cart
+plan and has no checkout, payment, or order-submission capability. The shared
+comparison and routing index is maintained at
+`tools/mission-control/docs/reference/supermarket-clis.md`.
+
 ## Install
 
 **npm** — downloads the prebuilt binary for your platform on install:
